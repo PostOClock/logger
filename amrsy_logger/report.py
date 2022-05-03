@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 
-from database.connection import active_moudules_queue_connection
+from .db import active_moudules_queue_connection
 
 
 def system_print(entry, difference):

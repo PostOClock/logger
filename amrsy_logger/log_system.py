@@ -5,7 +5,7 @@ import psutil
 
 from .functions import add_to_log
 
-LOG_SYSTEM_INTERVAL = 60
+_LOG_SYSTEM_INTERVAL = 60
 
 
 def get_system_info():
@@ -33,4 +33,4 @@ def log_system_info():
 def run_log_system_info():
     while True:
         log_system_info()
-        time.sleep(LOG_SYSTEM_INTERVAL)
+        time.sleep(_LOG_SYSTEM_INTERVAL)

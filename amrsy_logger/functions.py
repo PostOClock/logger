@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from database.connection import (active_moudules_queue_connection,
+from .db import (active_moudules_queue_connection,
                                  logs_queue_connection)
 
 
