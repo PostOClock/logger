@@ -7,7 +7,7 @@ from .db import (active_moudules_queue_connection,
 def record_acive_modules(data):
     data.pop("_id")
     query = {"module": data["module"]}
-    active_moudules_queue_connection.update(query, data, upsert=True)
+    active_moudules_queue_connection.update_one(query, data, upsert=True)
 
 
 def add_to_log(time_taken, module, system=None, type_c=None):
