@@ -6,7 +6,7 @@ from .db import (active_moudules_queue_connection,
 
 def record_acive_modules(data):
     data.pop("_id")
-    query = {"module": data["module"]}
+    query = {"$set": {"module": data["module"]}}
     active_moudules_queue_connection.update_one(query, data, upsert=True)
 
 
