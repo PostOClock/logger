@@ -4,7 +4,7 @@ print(find_packages())
 __version__ = "0.2"
 
 setup(
-    name='amrsy_log',
+    name='amrsy_logger',
     version=__version__,
     packages=find_packages(exclude=['tests']),
     zip_safe=True,
