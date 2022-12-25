@@ -1,5 +1,5 @@
 import pymongo
-
+import time
 
 _admisterable_exception = (pymongo.errors.AutoReconnect)
 
@@ -16,6 +16,10 @@ def retry(times=1000, exceptions=_admisterable_exception):
                         '%d of %d' % (func, attempt, times)
                     )
                     attempt += 1
+                    time.sleep(10)
+                    print(
+                        'retrying after sleep of 10 seconds'
+                    )
             return func(*args, **kwargs)
         return newfn
     return decorator
