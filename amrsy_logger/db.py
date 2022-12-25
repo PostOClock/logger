@@ -1,4 +1,3 @@
-
 from database import mongo_client
 
 

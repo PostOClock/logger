@@ -1,7 +1,6 @@
 from datetime import datetime
-
-from .db import (active_moudules_queue_connection,
-                                 logs_queue_connection)
+from .exception_handling import retry
+from .db import (active_moudules_queue_connection, logs_queue_connection)
 
 
 def record_acive_modules(data):
@@ -35,7 +34,7 @@ def time_function(function):
     time_taken = round(time_taken, 2)
     return time_taken
 
-
+@retry()
 def log_function(function, *args, **kwargs):
     module = function.__name__
     time_taken = time_function(function, *args, **kwargs)
