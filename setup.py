@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 print(find_packages())
-__version__ = "0.3"
+__version__ = "0.4"
 
 setup(
     name='amrsy_logger',

@@ -1,7 +1,7 @@
 import pymongo
 import time
 
-_admisterable_exception = (pymongo.errors.AutoReconnect)
+_admisterable_exception = (pymongo.errors.AutoReconnect, pymongo.errors.ServerSelectionTimeoutError)
 
 def retry(times=1000, exceptions=_admisterable_exception):
     def decorator(func):
@@ -16,7 +16,7 @@ def retry(times=1000, exceptions=_admisterable_exception):
                         '%d of %d' % (func, attempt, times)
                     )
                     attempt += 1
-                    time.sleep(10)
+                    time.sleep(2 * 60)
                     print(
                         'retrying after sleep of 10 seconds'
                     )
