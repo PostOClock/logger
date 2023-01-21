@@ -1,7 +1,7 @@
 import pymongo
 import time
 
-_admisterable_exception = (pymongo.errors.AutoReconnect, pymongo.errors.ServerSelectionTimeoutError, pymongo.errors.CursorNotFound)
+_admisterable_exception = (pymongo.errors.AutoReconnect, pymongo.errors.ServerSelectionTimeoutError, pymongo.errors.CursorNotFound, pymongo.errors.WriteConcernError)
 
 def retry(times=1000, exceptions=_admisterable_exception):
     def decorator(func):
